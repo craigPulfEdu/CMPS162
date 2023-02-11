@@ -1,0 +1,119 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>CMPS 162: Module 5 Programming Project</title>
+<style>* { font-family: monospace; }</style>
+<script>
+
+//--------//
+// Events //
+//--------//
+console.log("Events");
+
+// 1. Change the link (the <a> tag) in the HTML body below such that a hello
+//    message is displayed on a click event.
+
+// done check body code
+
+//--------------//
+// Input Fields //
+//--------------//
+console.log("Input Fields");
+
+// 1. Change the background color to red for the input text field (the <input>
+//    tag) in the HTML body when obtaining the focus and change it back to
+//    white when the focus is lost.
+
+// done check body code
+
+// 2. Read the content of the input field (the <input> tag) when the focus is
+//    lost and alert it to the user.
+
+function getValue(ID) {
+    const meow = document.getElementById(ID).value;
+    return meow;
+}
+
+// originally my statement used the function above, but that is not necessary 
+// alert statement is in body
+
+//------------//
+// Paragraphs //
+//------------//
+console.log("Paragraphs");
+
+// 1. Write JavaScript code that changes the text in the paragraph below
+//    (the <p> tag) from "Hello World!" to "Goodbye World!".
+
+  function changeParagraph() {
+  document.getElementById("p1").innerText = "Goodbye World";
+}
+
+//this function changeParagraph() just changes the text in p1 to "GoodBye World"
+
+// I used onMouseover for the call of this function to change the text
+
+//the function can be better modified to make it more usable for any paragraph by adding two parameters, one which identifies
+//the html element via id, and one that identifies what you are inserting into it.
+
+document.getElementById("p1").innerHTML = "New text!";
+
+
+
+//--------//
+// Images //
+//--------//
+console.log("Images");
+
+// 1. Add an image to the HTML body (use the <img> tag). Make it disappear when
+//    someone clicks on it.
+
+// check body to see how it goes invisible with onclick 
+
+//code on img : onclick="style='visibility:hidden'"
+
+
+//--------//
+// Styles //
+//--------//
+console.log("Styles");
+
+// 1. Use the style of div1 and div2 to swap the colors of the divs.
+
+// the function swapColors() just gets the values from each style and sets them to their new values
+// basically it sets div1's color to div 2's color and div 2 color to div 1
+
+function swapColors() {
+  let color1 = document.getElementById('div1').style.backgroundColor;
+  let color2 = document.getElementById('div2').style.backgroundColor;
+  document.getElementById('div1').style.backgroundColor = color2;
+  document.getElementById('div2').style.backgroundColor = color1;
+}
+
+
+
+</script>
+</head>
+<body>
+  See console!<br><br>
+  <a onClick="alert('Hello User :D')">Click here for a greeting!</a><br><br>
+
+  <input type="text" id="greeting" onFocus="this.style.backgroundColor='red'" onBlur="this.style.backgroundColor='white', alert(document.getElementById('greeting').value)"> <br><br>
+
+  <p id="p1" onmouseover="changeParagraph()">Hello World!</p>
+
+  <img src="randomcat.jpg" id="image" width="350px" length="350px" onclick="style='visibility:hidden'">
+
+  <div id="div1"
+       style="background-color:yellow;"
+       onclick="swapColors();">
+    Hello
+  </div>
+  <div id="div2"
+       style="background-color:green;"
+       onclick="swapColors();">
+    World
+  </div>
+</body>
+</html>

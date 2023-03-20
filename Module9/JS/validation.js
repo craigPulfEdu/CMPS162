@@ -5,7 +5,6 @@ function validateAddress() {
     var addy2 = document.getElementById("Address2").value;
     if (addy1 === "" || addy2 === "") {
         document.body.style.backgroundColor = "pink";
-        alert("Fill in address fields")
     }
 }
 
@@ -15,18 +14,17 @@ function validateQuestions() {
     var question3 = document.getElementById("Q3").value;
     if (question1 === "") {
         document.getElementById("Q1").style.backgroundColor = "yellow";
+    } else {
+        document.getElementById("Q1").style.backgroundColor = "white";
     }
     if (question2 === "") {
         document.getElementById("Q2").style.backgroundColor = "yellow";
+    } else {
+        document.getElementById("Q2").style.backgroundColor = "white";
     }
     if (question3 === "") {
         document.getElementById("Q3").style.backgroundColor = "yellow";
-    }
-}
-
-function selectState() {
-    if (document.getElementById("states").value === "na") {
-        alert("please select a valid state value")
-        return false;
+    } else {
+        document.getElementById("Q3").style.backgroundColor = "white";
     }
 }
